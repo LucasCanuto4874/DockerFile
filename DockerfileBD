@@ -1,0 +1,11 @@
+FROM mysql:latest
+
+MYSQL_USER=root
+MYSQL_ROOT_PASSWORD=urubu100
+MYSQL_DATABASE=novascan
+
+WORDIR = /tabelaScript
+
+COPY ./aplicacao/src/database/scriptBanco /tabelaScript/
+
+EXPOSE 3306

@@ -1,0 +1,11 @@
+FROM node:latest
+
+WORKDIR /novaScan
+
+COPY /Grupo-4-Nova-Scan/aplicacao /novaScan/
+
+RUN npm install
+
+EXPOSE 8080
+
+CMD ["npm", "start"]
