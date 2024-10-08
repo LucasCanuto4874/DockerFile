@@ -14,7 +14,7 @@ if [ $? = 0 ];
         echo "Deseja instalar Java? S ou N"
         read opcao 
 
-        if [\"$opcao\" == \"S\"];
+        if [ \"$opcao\" == \"S\" ];
             then
                 echo "Instalando Java"
                 sudo apt install openjdk-17-jre
@@ -34,7 +34,7 @@ if [ $? = 0 ];
         echo "Deseja instalar Python? S ou N"
         read opcao 
 
-        if [\"$opcao\" == \"S\"];
+        if [ \"$opcao\" == \"S\" ];
             then
                 echo "Instalando Python"
                 sudo apt install python3 && sudo apt install python3-pip
@@ -55,7 +55,7 @@ if [ $? = 0 ];
         echo "Deseja instalar o Docker? S ou N"
         read opcao
 
-        if [\"$opcao\" == \"S\"];
+        if [ \"$opcao\" == \"S\" ];
             then
                 echo "Instalando Docker"
                 sudo apt install docker.io
