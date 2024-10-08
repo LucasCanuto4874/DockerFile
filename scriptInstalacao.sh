@@ -63,20 +63,21 @@ if [ $? = 0 ];
 fi      
 
 echo "Clonando o repositorio do Docker File"
-git clone https://github.com/RebecaFernn/Grupo-7-Nova-Scan.git
+git clone https://github.com/LucasCanuto4874/DockerFile.git
 
 echo "Acessando repositorio do projeto"
-cd Grupo-7-Nova-Scan
+cd DockerFile
 
 sleep 2
 
 echo "Criando a imagem do servidor web"
-sudo docker build -f .dockerFile/DockerfileNode -t servidor-web 
+sudo docker build -f DockerfileNode -t servidor-web 
 
 sleep 2
 
 echo "Criando a imagem do banco de dados"
-sudo docker build -f .dockerFile/DockerfileBD -t banco-de-dados ./aplicacao/src/database/
+# -f usado para especificar o arquivo Dockerfile pois tem nome diferente do padrão
+sudo docker build -f DockerfileBD -t banco-de-dados ./aplicacao/src/database/
 
 sleep 2
 
@@ -92,6 +93,14 @@ sleep 2
 
 echo "Acessando o container do repositorio da NovaScan"
 sudo docker exec -it container-servidorweb bash
+
+# Dentro do bash do container
+
+sudo apt-get update && apt-get install nano
+
+echo "Iniciando o servidor web"
+
+sleep 2
 
 npm i
 npm start
